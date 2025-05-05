@@ -1,0 +1,12 @@
+.service-sections-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+}
+
+@media (max-width: 768px) {
+  .service-sections-container {
+    overflow: hidden;
+  }
+}

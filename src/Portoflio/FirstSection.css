@@ -1,0 +1,282 @@
+/* Portfolio Hero Section Styles */
+.portfolio-hero {
+  background-image: url("../assets/images/developer-8829735_1280 1.png");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding-left: 150px;
+}
+
+.portfolio-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: right;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 100px 20px;
+  direction: rtl;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.contact-button {
+  background-color: white;
+  color: #f4f4f5;
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  direction: rtl;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .portfolio-hero {
+    height: 400px;
+    padding-left: 60px;
+  }
+
+  .hero-content {
+    padding: 0 20px 0 60px;
+  }
+}
+
+/* Services Menu Styles */
+.services-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 18px 50px;
+  direction: ltr;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+}
+
+.service-item {
+  flex: 1;
+  text-align: center;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.service-item a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  direction: rtl;
+}
+
+.service-item.active a,
+.service-item:last-child a {
+  color: #333;
+  border-bottom: 2px solid #ffc107;
+  padding-bottom: 3px;
+}
+
+.service-item:first-child a {
+  color: #333;
+}
+
+.service-item a:hover {
+  color: #091242;
+}
+
+.service-divider {
+  width: 1px;
+  height: 25px;
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 1024px) {
+  .service-item a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-menu {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .service-item {
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  .service-divider {
+    width: 80%;
+    height: 1px;
+    margin: 5px 0;
+  }
+}
+
+/* Dropdown styles */
+.service-item.dropdown {
+  position: relative;
+}
+
+.service-item.dropdown > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+/* Remove the after pseudo-element that creates the arrow */
+.service-item.dropdown > a::after {
+  display: none;
+}
+
+/* Remove the dropdown arrow styling that's no longer needed */
+.dropdown-arrow {
+  display: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  min-width: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 15px;
+  z-index: 10;
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: right;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  border-top: 3px solid #ffc107;
+}
+
+/* Remove the dropdown menu triangle indicator */
+.dropdown-menu:before {
+  display: none;
+}
+
+.service-item.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Ensure all dropdown links have consistent padding without arrow space */
+.dropdown-menu a {
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: none !important;
+  position: relative;
+  display: block;
+  text-align: right;
+  direction: rtl;
+}
+
+/* Simple hover effect without any arrow indicators */
+.dropdown-menu a:hover {
+  background-color: #f8f8f8;
+  color: #091242;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    margin-top: 10px;
+    padding: 0;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    width: 100%;
+    display: none;
+    border-top: none;
+    border-right: 3px solid #ffc107;
+  }
+
+  .service-item.dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+
+  .dropdown-menu:before {
+    display: none;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Specifically remove the chevron icons from dropdown menu items */
+.dropdown-menu.no-arrows a::after,
+.dropdown-menu.no-arrows a::before {
+  display: none !important;
+  content: none !important;
+}
+
+.dropdown-menu.no-arrows a {
+  background-image: none !important;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+}
+
+/* Special rule to override any potential external arrows */
+.dropdown-menu.no-arrows a > * {
+  display: inline-block !important;
+}

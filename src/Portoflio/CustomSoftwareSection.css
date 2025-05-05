@@ -1,0 +1,183 @@
+.custom-software-section {
+  direction: rtl;
+  background: #fff;
+  padding: 40px 0;
+  font-family: "Cairo", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.custom-software-header {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  text-align: right;
+  padding: 0 20px;
+}
+
+.custom-software-header h3 {
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.custom-software-header .subtitle {
+  color: #6c63ff;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.custom-software-header .description {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.custom-software-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.custom-software-card {
+  background: #fafaff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(80, 80, 120, 0.07);
+  padding: 28px 20px 20px 20px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 100%;
+}
+
+.custom-software-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(80, 80, 120, 0.18);
+  background: #f8f9ff;
+}
+
+.custom-software-card:hover h4 {
+  color: #6c63ff;
+}
+
+.custom-software-card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 0;
+  background: linear-gradient(135deg, #6c63ff, #8c7fff);
+  transition: height 0.3s ease;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+.custom-software-card:hover:after {
+  height: 100%;
+}
+
+.img-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  min-height: 160px;
+  max-height: 160px;
+  background: linear-gradient(135deg, #e9e9f0 60%, #dad8ff 100%);
+  border-radius: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.app-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #7a76ff 10%, #6c63ff 90%);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+  transform: rotate(-5deg);
+  transition: all 0.3s ease;
+}
+
+.custom-software-card:hover .img-placeholder {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #e8e8f5 30%, #d6d4ff 100%);
+}
+
+.custom-software-card:hover .app-icon {
+  transform: rotate(0deg) scale(1.1);
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
+}
+
+.custom-software-card h4 {
+  font-size: 1.25rem;
+  color: #2d2d2d;
+  margin-bottom: 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.custom-software-card p {
+  color: #555;
+  font-size: 1rem;
+  margin: 0;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 2;
+  line-height: 1.6;
+}
+
+.custom-software-card:hover p {
+  color: #444;
+}
+
+@media (max-width: 1024px) {
+  .custom-software-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .custom-software-header {
+    padding: 0 15px;
+  }
+  .custom-software-grid {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+    gap: 20px;
+  }
+  .custom-software-card {
+    padding: 20px 15px;
+  }
+  .img-placeholder {
+    min-height: 120px;
+    max-height: 120px;
+  }
+  .app-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+    border-radius: 15px;
+  }
+}

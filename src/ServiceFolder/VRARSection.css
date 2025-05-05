@@ -1,0 +1,283 @@
+.vrar-section {
+  width: 100%;
+  padding: 80px 0;
+  direction: rtl;
+  font-family: var(--font-main);
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.vrar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.vrar-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.vrar-text-content {
+  width: 50%;
+  padding-left: 20px;
+}
+
+.vrar-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000;
+  text-align: right;
+}
+
+.vrar-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: right;
+}
+
+.vrar-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.vrar-service-link {
+  position: relative;
+  width: calc(50% - 8px);
+  max-width: 365px;
+  height: 49px;
+  background: #ffffff;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.vrar-service-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #f6f1ff;
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.vrar-service-link:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 5px 15px rgba(118, 71, 170, 0.15);
+}
+
+.vrar-service-link:hover::before {
+  width: 100%;
+}
+
+.vrar-service-link:hover .vrar-service-text {
+  color: #7647aa;
+}
+
+.vrar-service-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  text-align: center;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.vrar-link-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* Learn More Button */
+.vrar-learn-more-btn {
+  background-color: #13113f;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  float: right;
+  margin-top: 20px;
+}
+
+.vrar-learn-more-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff1b6b, #45caff);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.vrar-learn-more-btn:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.05);
+  color: white;
+  letter-spacing: 1px;
+}
+
+.vrar-learn-more-btn:hover::before {
+  width: 100%;
+}
+
+.vrar-learn-more-btn:hover::after {
+  position: absolute;
+  right: 10px;
+  opacity: 1;
+}
+
+.vrar-learn-more-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.vrar-button-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.vrar-image-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.vrar-img {
+  width: 100%;
+  max-width: 500px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.vrar-image-container:hover .vrar-img {
+  transform: translateY(-10px);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .vrar-content-wrapper {
+    gap: 30px;
+  }
+
+  .vrar-img {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 992px) {
+  .vrar-content-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .vrar-text-content,
+  .vrar-image-container {
+    width: 100%;
+  }
+
+  .vrar-text-content {
+    padding-left: 0;
+  }
+
+  .vrar-img {
+    max-width: 400px;
+  }
+
+  .vrar-service-link {
+    width: calc(50% - 8px);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .vrar-section {
+    padding: 60px 0;
+  }
+
+  .vrar-title {
+    font-size: 24px;
+  }
+
+  .vrar-description {
+    font-size: 15px;
+  }
+
+  .vrar-img {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .vrar-section {
+    padding: 40px 0;
+  }
+
+  .vrar-title {
+    font-size: 20px;
+  }
+
+  .vrar-description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .vrar-buttons {
+    flex-direction: column;
+  }
+
+  .vrar-service-link {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+  }
+
+  .vrar-service-text {
+    font-size: 0.85rem;
+  }
+
+  .vrar-learn-more-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .vrar-img {
+    max-width: 300px;
+  }
+}

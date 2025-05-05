@@ -1,0 +1,359 @@
+.features-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+  direction: rtl;
+  font-family: "Helvetica Neue W23 for SKY", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Features Header Styles */
+.features-header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+  padding: 0 20px;
+  position: relative;
+  min-height: 400px;
+}
+
+.lightbulb-image {
+  flex: 0 0 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.lightbulb-image img {
+  max-width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+.header-content {
+  flex: 0 0 60%;
+  position: relative;
+  width: 731px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.main-title {
+  position: relative;
+  width: 731px;
+  font-family: "Helvetica Neue W23 for SKY", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 71px;
+  text-align: right;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.main-description {
+  font-family: "Helvetica Neue W23 for SKY", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: right;
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+/* Features Headline Styles */
+.features-headline {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Feature Cards Styles */
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 60px;
+  padding: 0;
+  justify-items: center;
+}
+
+.feature-card {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  min-height: 300px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 35px 25px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #f5f5f5;
+  box-sizing: border-box;
+  margin: 0 auto;
+  justify-content: flex-start;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(173, 216, 230, 0.2)
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.feature-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  opacity: 0;
+  transition: all 0.8s ease;
+  z-index: 0;
+}
+
+.feature-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card:hover::after {
+  opacity: 1;
+  transform: rotate(30deg) translate(350px, -100px);
+  transition: all 0.8s ease;
+}
+
+.icon-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto 25px;
+}
+
+/* Override background color with colors from the image */
+.feature-card:nth-child(1) .icon-container {
+  background: #ffb422; /* Orange/yellow for "تقنيات حديثة" */
+}
+
+.feature-card:nth-child(2) .icon-container {
+  background: #7c28ff; /* Purple for "حلول متكاملة" */
+}
+
+.feature-card:nth-child(3) .icon-container {
+  background: #ffb422; /* Orange/yellow for "فريق متخصص" */
+}
+
+.feature-card:nth-child(4) .icon-container {
+  background: #f83e5b; /* Red/pink for "تكلفة مناسبة" */
+}
+
+.feature-card:nth-child(5) .icon-container {
+  background: #00d698; /* Green for "دعم مستمر" */
+}
+
+.feature-card:nth-child(6) .icon-container {
+  background: #f83e5b; /* Red/pink for "تصميمات متميزة" */
+}
+
+.feature-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: brightness(0) invert(1); /* Make icons white */
+}
+
+.feature-card:hover .feature-icon {
+  opacity: 1;
+}
+
+.feature-card:hover .icon-container {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #000;
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1400px) {
+  .header-content {
+    width: auto;
+    max-width: 731px;
+  }
+
+  .main-title {
+    width: auto;
+  }
+
+  .feature-card {
+    width: 350px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .features-header {
+    flex-direction: column-reverse;
+  }
+
+  .lightbulb-image {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  .header-content {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .main-title {
+    text-align: center;
+    font-size: 36px;
+    line-height: 60px;
+    width: 100%;
+  }
+
+  .main-description {
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+  }
+
+  .feature-card {
+    width: 100%;
+    height: auto;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 992px) {
+  .feature-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .main-title {
+    font-size: 32px;
+    line-height: 52px;
+  }
+
+  .main-description {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .feature-card {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .main-title {
+    font-size: 28px;
+    line-height: 46px;
+  }
+
+  .main-description {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .features-header {
+    margin-bottom: 50px;
+  }
+
+  .feature-card {
+    max-width: 380px;
+    width: 100%;
+  }
+}
